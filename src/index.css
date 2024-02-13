@@ -58,14 +58,6 @@
   border-radius: 5px;
 }
 
-.figcaption {
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
 .active-filter {
   background: #f0f0f5;
   font-weight: 500;
@@ -81,9 +73,9 @@
   display: inline-block;
 }
 .dropdown-toggle {
-  border: 1px solid #ccc;
   padding: 5px 10px;
   cursor: pointer;
+  padding-top: 0.5rem;
 }
 .dropdown-menu {
   display: none;

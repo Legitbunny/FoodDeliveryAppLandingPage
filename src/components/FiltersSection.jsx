@@ -28,6 +28,7 @@ const FiltersSection = () => {
     setActiveFilter({ ...activeFilter, [filter]: !activeFilter[filter] });
   };
 
+
   const sortChangeHandler = () => {
     setIsSort(!isSort);
     sortMealsAlphabetically(meals);
@@ -41,7 +42,7 @@ const FiltersSection = () => {
 
       <div className="flex flex-wrap gap-1 sm:flex-row filters-wrapper py-4">
         <div
-          className={`dropdown bg-white  text-gray-700 text-sm px-4 py-2 flex justify-center items-baseline 
+          className={`dropdown bg-white  text-gray-700 text-sm px-4flex justify-center items-center 
                 border-[0.15rem] rounded-full select-none ${
                   activeFilter.isFilterByArea ? "active-filter" : ""
                 }`}

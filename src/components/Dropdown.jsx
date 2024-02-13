@@ -6,8 +6,6 @@ function Dropdown() {
   const { getAllCountries, setSelectedOption, selectedOption, countries } =
     useContext(AppContext);
 
-  <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>;
-
   // Handler function to update the selected value
   const handleDropdownChange = (event) => {
     setSelectedOption(event.target.value);
@@ -19,12 +17,12 @@ function Dropdown() {
 
   return (
     <div className="dropdown flex">
-      <label htmlFor="dropdown" className="pr-1">
+      <label htmlFor="dropdown" className="pl-4 ">
         Filter by Area:
       </label>
 
       <div class="dropdown">
-        <button type="button" class="dropdown-toggle">
+        <button type="button" className="dropdown-toggle ">
           Select Country...
         </button>
         <ul
