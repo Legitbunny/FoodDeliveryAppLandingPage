@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+}
+
+.modal-wrapper {
+  position: fixed;
+  display: flex;
+  left: 0;
+  right: 0%;
+  bottom: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(189, 189, 189, 0.8);
+  z-index: 10;
+}
+
+.modal-container {
+  position: absolute;
+  max-width: 50rem;
+  max-height: 50rem;
+
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.page-link {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.active {
+  background-color: #f38607;
+  color: white;
+  border-radius: 5px;
+}
+
+.page-link:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.figcaption {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.active-filter {
+  background: #f0f0f5;
+  font-weight: 500;
+  border: 0.1rem black solid;
+  user-select: none;
+}
+
+.filters-wrapper {
+  align-content: flex-start;
+}
+
+select {
+  list-style: none;
+}
+
+select li {
+  font-size: 18px;
+}
+
+select option {
+  display: block;
+  text-decoration: none;
+}
+
+select option a,
+select option button {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  color: inherit;
+}
+
+.slect-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 250px;
+  height: 50px;
+}
+
+.select-box {
+  border: none;
+  /* appearance: none; */
+  padding: 0 30px 0 15px;
+  width: 100%;
+  color: black;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.select-container .icon-container {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  right: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.dropdown-option {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.overlay{
+  background: rgb(48,48,48);
+  background: linear-gradient(0deg, rgba(48,48,48,1) 0%, rgba(90,90,90,0.9813699161305147) 29%, rgba(149,149,149,0.46876487411370793) 100%, rgba(154,154,154,1) 100%);  
+}
+.figcaption{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  height: 20%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+  transition: 0.5s;
+}
