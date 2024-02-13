@@ -3,11 +3,12 @@ import { FaSearch } from "react-icons/fa";
 
 export default function Navbar() {
   return (
+    //navbar container
     <div className="navbar flex flex-row px-10 md:w-10/12 justify-between items-center md:mx-auto pt-4 md:items-center ">
       <div className="logo">
         <img src={logo} className="md:h-[3.5rem] h-[2rem] " />
       </div>
-
+      
       <div className="searchbar bg-white w-[13rem] md:w-[22rem] rounded-md h-[2.5rem] shadow-md flex items-center content-between py-0 px-1">
         <input
           placeholder="Search for restaurants and food"

@@ -5,8 +5,7 @@ import { AppContext } from "../context/AppContext";
 import { IoClose } from "react-icons/io5";
 
 const FiltersSection = () => {
-  const { isSort, setIsSort, meals, sortMealsAlphabetically, selectedOption } =
-    useContext(AppContext);
+  const { isSort, setIsSort, meals, sortMealsAlphabetically, selectedOption } = useContext(AppContext);
   const [activeFilter, setActiveFilter] = useState({
     isFilterByArea: false,
     isSort: false,
@@ -20,6 +19,7 @@ const FiltersSection = () => {
   });
   const [data, setData] = useState();
 
+  //handler functions to remove the filter 
   const closeIconHandler = () => {
     setData(!activeFilter);
   };

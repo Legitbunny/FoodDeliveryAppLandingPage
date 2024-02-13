@@ -6,12 +6,18 @@ export const AppContext = createContext();
 
 //provider creation
 export default function AppContextProvider({ children }) {
+  //define states to get the data during fetch request
+  //State to manage the meals
   const [meals, setMeals] = useState([]);
+  //State to manage the isSort
   const [isSort, setIsSort] = useState(false);
+  //State to manage the countries (area) area from api call to show it into the dropdown
   const [countries, setCountries] = useState([]);
   // State to manage the selected value
   const [selectedOption, setSelectedOption] = useState("Indian");
 
+  //Async function for the api call to  fetch
+  //all the meals for a selected area
   async function mealsData(selectedOptions) {
     let API_INDIANMEALS = `${baseUrl}filter.php?a=${selectedOptions}`;
 
@@ -25,6 +31,8 @@ export default function AppContextProvider({ children }) {
     }
   }
 
+  //Async function for the api call to  fetch
+  //all the country names to display in the dropdown list
   async function getAllCountries() {
     let API_GETALLCOUNTRIES = `${baseUrl}list.php?a=list`;
 
@@ -37,6 +45,11 @@ export default function AppContextProvider({ children }) {
       setCountries([]);
     }
   }
+
+  //Async function for the api call to sort
+  //all the meals alphabetically
+  //NOTE: As API call itself giving reponse in sorted order
+  //there is no need of this function
 
   function sortMealsAlphabetically(meals) {
     // Use the sort function with a custom comparator based on strMeal

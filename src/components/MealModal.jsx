@@ -7,6 +7,8 @@ const MealModal = ({ meal, showModal, setShowModal }) => {
   let API_MEALDETAILS = `${baseUrl}lookup.php?i=${meal.idMeal}`;
 
   const [mealDetails, setMealDetails] = useState([]);
+  //async func to get the details of
+  //the selected meal and set it to meal details
   async function mealDetailsById() {
     try {
       const res = await fetch(API_MEALDETAILS);
@@ -19,8 +21,10 @@ const MealModal = ({ meal, showModal, setShowModal }) => {
 
   useEffect(() => {
     mealDetailsById();
+    //hiding scroll when the modal is opened
     document.body.style.overflowY = "hidden";
     return () => {
+      //enabling scroll when the modal is closed
       document.body.style.overflowY = "scroll";
     };
   }, []);
@@ -38,41 +42,25 @@ const MealModal = ({ meal, showModal, setShowModal }) => {
                 src={`${meal.strMealThumb}`}
                 className="w-full h-[15rem] shadow-md aspect-video object-cover rounded-xl"
               />
-              
-                <figcaption
-                  className="absolute bottom-0 left-0 text-white ml-0.5 p-1 sm:ml-1 sm:p-2  text-sm sm:text-2xl
-                                            font-bold rounded-lg 
-                    ">
-                 {`${mealDetails[0].strMeal}`}<br/>{`\r\nCategory: ${mealDetails[0].strCategory}`}
-                </figcaption>
-              
-            </figure>
-            
-            
 
-                {/* <div className="relative">
-                <p >
-                  <span className="font-semibold ">Category:</span>{" "}
-                  {mealDetails[0].strCategory}
-                </p>
-                <p >
-                  <span className="font-semibold">Country:</span>{" "}
-                  {mealDetails[0].strArea}
-                </p>
-                <p className="absolute ">
-                  <span className="font-semibold">Tags:</span>{" "}
-                  {mealDetails[0].strTags}
-                </p>
-              </div> */}
+              <figcaption
+                className="absolute bottom-0 left-0 text-white ml-0.5 p-1 sm:ml-1 sm:p-2  text-sm sm:text-2xl
+                                            font-bold rounded-lg 
+                    "
+              >
+                {`${mealDetails[0].strMeal}`}
+                <br />
+                {`\r\nCategory: ${mealDetails[0].strCategory}`}
+              </figcaption>
+            </figure>
           </div>
-          <IoClose onClick={() => setShowModal(!showModal)} 
-              className="flex absolute top-4 right-4"
-            />
+          <IoClose
+            onClick={() => setShowModal(!showModal)}
+            className="flex absolute top-4 right-4"
+          />
           <hr className="mb-2" />
           <div className="details-conatiner p-2">
-            <div className="flex justify-between">
-              
-            </div>
+            <div className="flex justify-between"></div>
             <div
               className={`${
                 mealDetails[0].strInstructions.trim().split(/\s+/).length > 100
@@ -80,7 +68,10 @@ const MealModal = ({ meal, showModal, setShowModal }) => {
                   : ""
               }`}
             >
-              <p><span className="font-semibold">Instructions:</span> {mealDetails[0].strInstructions}</p>
+              <p>
+                <span className="font-semibold">Instructions:</span>{" "}
+                {mealDetails[0].strInstructions}
+              </p>
             </div>
           </div>
         </div>

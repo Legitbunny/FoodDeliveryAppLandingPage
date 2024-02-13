@@ -5,7 +5,7 @@ import { MdStars } from "react-icons/md";
 import "../index.css";
 
 const Card = ({ meal }) => {
-  // const ratings = Number(Math.random() * 5).toFixed(2);
+
   const min = 2;
   const max = 5;
   const diff = max - min;

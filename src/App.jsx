@@ -6,8 +6,8 @@ import AppContextProvider from "./context/AppContext";
 
 function App() {
   return (
-    <div className="">
-      <div className="">
+    <div>
+      <div>
         <Navbar />
         <div className="h-[0.15rem] bg-slate-100 m-2 mt-6 w-11/12 mx-auto" />
       </div>

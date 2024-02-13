@@ -1,18 +1,21 @@
 import React from "react";
 
 const Pagination = ({ currentPage, setCurrentPage, numbers, pages }) => {
+  //function to move to the previous page
   function prePage() {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
     }
   }
 
+  //function to move to the next page
   function nextPage() {
     if (currentPage !== pages) {
       setCurrentPage(currentPage + 1);
     }
   }
 
+  //function to change the current page
   function changeCurrentPage(id) {
     setCurrentPage(id);
   }

@@ -5,8 +5,7 @@ import { AppContext } from "../context/AppContext";
 import Pagination from "./Pagination";
 
 const FoodItemsSection = () => {
-  const { meals, mealsData, selectedOption, totalMeals, setTotalMeals } =
-    useContext(AppContext);
+  const { meals, mealsData, selectedOption } = useContext(AppContext);
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -17,9 +16,7 @@ const FoodItemsSection = () => {
   const mealsPerPage = 8;
   const lastIndex = currentPage * mealsPerPage;
   const firstIndex = lastIndex - mealsPerPage;
-
   const currentMeals = meals ? meals.slice(firstIndex, lastIndex) : [];
-  // setMeals(currentMeals);
   const pages = Math.ceil(meals.length / mealsPerPage);
   const numbers = [...Array(pages + 1).keys()].slice(1);
 
