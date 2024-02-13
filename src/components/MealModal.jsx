@@ -36,7 +36,7 @@ const MealModal = ({ meal, showModal, setShowModal }) => {
             <figure className="card image-container relative overflow-hidden m-1">
               <img
                 src={`${meal.strMealThumb}`}
-                className="w-full h-[15rem] shadow-md aspect-video object-cover rounded-xl px-2"
+                className="w-full h-[15rem] shadow-md aspect-video object-cover rounded-xl"
               />
               
                 <figcaption
@@ -69,7 +69,7 @@ const MealModal = ({ meal, showModal, setShowModal }) => {
               className="flex absolute top-4 right-4"
             />
           <hr className="mb-2" />
-          <div className="details-conatiner p-4">
+          <div className="details-conatiner p-2">
             <div className="flex justify-between">
               
             </div>

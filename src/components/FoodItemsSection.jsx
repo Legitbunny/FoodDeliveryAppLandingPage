@@ -28,7 +28,7 @@ const FoodItemsSection = () => {
       <div
         className={`${
           currentMeals.length % 4 === 0
-            ? ` grid-cols-2 grid md:grid-cols-4 md:grid-rows-1`
+            ? `grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4`
             : "grid grid-cols-4 grid-rows-2 gap-1 m-3 "
         }`}
       >

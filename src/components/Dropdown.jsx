@@ -22,26 +22,33 @@ function Dropdown() {
       <label htmlFor="dropdown" className="pr-1">
         Filter by Area:
       </label>
-      <div className="select-container flex">
-        <select
-          id="dropdown"
-          className="select-box hover:cursor-pointer"
-          name="dropdown"
+
+      <div class="dropdown">
+        <button type="button" class="dropdown-toggle">
+          Select Country...
+        </button>
+        <ul
+          class="dropdown-menu hover:cursor-pointer h-[20rem]  overflow-y-auto"
           value={selectedOption}
           onChange={handleDropdownChange}
         >
           {countries.map((country, index) => {
             return (
-              <option
-                key={index}
-                className="dropdown-option"
-                value={country.strArea}
-              >
-                {country.strArea}
-              </option>
+              <li key={index} value={country.strArea}>
+                <label for={country.strArea} className="hover:cursor-pointer">
+                  <input
+                    type="radio"
+                    id={country.strArea}
+                    name="myRadio"
+                    value={country.strArea}
+                    className="m-2"
+                  />
+                  {country.strArea}
+                </label>
+              </li>
             );
           })}
-        </select>
+        </ul>
       </div>
     </div>
   );

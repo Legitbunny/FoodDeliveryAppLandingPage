@@ -8,11 +8,12 @@ const FiltersSection = () => {
   const { isSort, setIsSort, meals, sortMealsAlphabetically, selectedOption } =
     useContext(AppContext);
   const [activeFilter, setActiveFilter] = useState({
+    isFilterByArea: false,
     isSort: false,
-    fastDelivery: false,
+    isFastDelivery: false,
     rating: false,
-    pureVeg: false,
-    offer: false,
+    isPureVeg: false,
+    isOffer: false,
     rs300to500: false,
     lessThan300: false,
     isNewOnSwiggy: false,
@@ -35,13 +36,16 @@ const FiltersSection = () => {
   return (
     <div className="pt-3 ">
       <p className="text-bold text-xl m-1 mb-3 sm:text-lg md:text-xl lg:text-2xl xl:text-2xl text-center sm:text-left">
-        Restaurants with online food delivery in {selectedOption}
+        Restaurants with online food delivery in {selectedOption} cuisine
       </p>
 
       <div className="flex flex-wrap gap-1 sm:flex-row filters-wrapper py-4">
         <div
-          className="dropdown bg-white  text-gray-700 text-sm px-4 py-2 flex justify-center items-baseline 
-                border-[0.15rem] rounded-full select-none"
+          className={`dropdown bg-white  text-gray-700 text-sm px-4 py-2 flex justify-center items-baseline 
+                border-[0.15rem] rounded-full select-none ${
+                  activeFilter.isFilterByArea ? "active-filter" : ""
+                }`}
+          onClick={() => handleFilterChange("isFilterByArea")}
         >
           <Dropdown />
         </div>
@@ -64,14 +68,14 @@ const FiltersSection = () => {
         <div
           className={`bg-white gap-1 select-none hover:cursor-pointer text-gray-700 text-sm px-4 py-2 flex justify-center items-center 
                 border-[0.15rem] rounded-full ${
-                  activeFilter.fastDelivery ? "active-filter" : ""
+                  activeFilter.isFastDelivery ? "active-filter" : ""
                 }`}
-          onClick={() => handleFilterChange("fastDelivery")}
+          onClick={() => handleFilterChange("isFastDelivery")}
         >
           <div>Fast Delivery</div>
-          {activeFilter.fastDelivery && (
+          {activeFilter.isFastDelivery && (
             <IoClose
-              onClick={() => handleFilterChange("fastDelivery")}
+              onClick={() => handleFilterChange("isFastDelivery")}
               className="ml-1"
             />
           )}
@@ -109,14 +113,14 @@ const FiltersSection = () => {
         <div
           className={`bg-white gap-1 select-none hover:cursor-pointer text-gray-700 text-sm px-4 py-2 flex justify-center items-center 
                 border-[0.15rem] rounded-full ${
-                  activeFilter.pureVeg ? "active-filter" : ""
+                  activeFilter.isPureVeg ? "active-filter" : ""
                 }`}
-          onClick={() => handleFilterChange("pureVeg")}
+          onClick={() => handleFilterChange("isPureVeg")}
         >
           <div>Pure Veg</div>
-          {activeFilter.pureVeg && (
+          {activeFilter.isPureVeg && (
             <IoClose
-              onClick={() => handleFilterChange("pureVeg")}
+              onClick={() => handleFilterChange("isPureVeg")}
               className="ml-1"
             />
           )}
@@ -124,12 +128,12 @@ const FiltersSection = () => {
         <div
           className={`bg-white gap-1 select-none hover:cursor-pointer text-gray-700 text-sm px-4 py-2 flex justify-center items-center 
                 border-[0.15rem] rounded-full ${
-                  activeFilter.offer ? "active-filter" : ""
+                  activeFilter.isOffer ? "active-filter" : ""
                 }`}
-          onClick={() => handleFilterChange("offer")}
+          onClick={() => handleFilterChange("isOffer")}
         >
           <div>Offers</div>
-          {activeFilter.offer && (
+          {activeFilter.isOffer && (
             <IoClose
               onClick={() => handleFilterChange("offer")}
               className="ml-1"

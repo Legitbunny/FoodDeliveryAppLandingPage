@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="searchbar bg-white w-[13rem] md:w-[22rem] rounded-md h-[2.5rem] shadow-md flex items-center content-between py-0 px-1">
         <input
           placeholder="Search for restaurants and food"
-          className="focus:outline-none bg-transparent border-none text-xs ml-1 w-full h-full"
+          className="focus:outline-none bg-transparent border-none text-xs sm:text-[1rem] ml-1 w-full h-full"
         />
 
         <FaSearch
